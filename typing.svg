@@ -1,63 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="380" height="40" viewBox="0 0 380 40">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="92" viewBox="0 0 520 92" role="img" aria-label="Adam's GitHub welcome message">
   <style>
-    .terminal-text {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 18px;
-      fill: #2f81f7;
+    .title {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
       font-weight: bold;
+      letter-spacing: 1px;
+      fill: #8b949e;
+    }
+
+    .terminal-text {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 16px;
+      font-weight: bold;
+      fill: #58a6ff;
     }
 
     .prompt { fill: #3fb950; }
 
-    /* Word Reveals */
-    .word1 { animation: revealWord1 6s infinite; }
-    .word2 { animation: revealWord2 6s infinite; }
-    .word3 { animation: revealWord3 6s infinite; }
+    .frame {
+      opacity: 0;
+      transform: translateY(4px);
+    }
 
-    /* Dot-by-dot Reveals */
-    .dot1 { animation: revealDot1 6s infinite; }
-    .dot2 { animation: revealDot2 6s infinite; }
-    .dot3 { animation: revealDot3 6s infinite; }
+    .frame1 { animation: show-frame-1 16s infinite; }
+    .frame2 { animation: show-frame-2 16s infinite; }
+    .frame3 { animation: show-frame-3 16s infinite; }
+    .frame4 { animation: show-frame-4 16s infinite; }
 
-    /* Cursor Animations */
     .cursor {
       fill: #58a6ff;
-      animation: blink 0.8s infinite, moveCursor 6s infinite;
+      animation: blink 0.85s step-end infinite;
     }
 
-    @keyframes revealWord1 {
-      0%, 8% { opacity: 1; }
-      85%, 100% { opacity: 0; }
+    @keyframes show-frame-1 {
+      0%, 3% { opacity: 0; transform: translateY(4px); }
+      7%, 22% { opacity: 1; transform: translateY(0); }
+      25%, 100% { opacity: 0; transform: translateY(-4px); }
     }
 
-    @keyframes revealWord2 {
-      0%, 13% { opacity: 0; }
-      14%, 85% { opacity: 1; }
-      92%, 100% { opacity: 0; }
+    @keyframes show-frame-2 {
+      0%, 25% { opacity: 0; transform: translateY(4px); }
+      29%, 47% { opacity: 1; transform: translateY(0); }
+      50%, 100% { opacity: 0; transform: translateY(-4px); }
     }
 
-    @keyframes revealWord3 {
-      0%, 19% { opacity: 0; }
-      20%, 85% { opacity: 1; }
-      92%, 100% { opacity: 0; }
+    @keyframes show-frame-3 {
+      0%, 50% { opacity: 0; transform: translateY(4px); }
+      54%, 72% { opacity: 1; transform: translateY(0); }
+      75%, 100% { opacity: 0; transform: translateY(-4px); }
     }
 
-    @keyframes revealDot1 {
-      0%, 25% { opacity: 0; }
-      26%, 85% { opacity: 1; }
-      92%, 100% { opacity: 0; }
-    }
-
-    @keyframes revealDot2 {
-      0%, 31% { opacity: 0; }
-      32%, 85% { opacity: 1; }
-      92%, 100% { opacity: 0; }
-    }
-
-    @keyframes revealDot3 {
-      0%, 37% { opacity: 0; }
-      38%, 85% { opacity: 1; }
-      92%, 100% { opacity: 0; }
+    @keyframes show-frame-4 {
+      0%, 75% { opacity: 0; transform: translateY(4px); }
+      79%, 97% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-4px); }
     }
 
     @keyframes blink {
@@ -65,31 +62,48 @@
       50% { opacity: 0; }
     }
 
-    @keyframes moveCursor {
-      0%, 8% { transform: translateX(0px); }
-      14% { transform: translateX(52px); }
-      20% { transform: translateX(92px); }
-      26% { transform: translateX(180px); }
-      31% { transform: translateX(192px); }
-      36% { transform: translateX(204px); }
-      41%, 85% { transform: translateX(216px); }
-      92%, 100% { transform: translateX(0px); }
+    @media (prefers-reduced-motion: reduce) {
+      .frame, .cursor { animation: none; }
+      .frame1 { opacity: 1; transform: none; }
     }
   </style>
 
-  <!-- Shell Prompt Icon -->
-  <text x="10" y="25" class="terminal-text prompt">&gt;</text>
+  <!-- Terminal window -->
+  <rect width="520" height="92" rx="12" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="519" height="91" rx="11.5" fill="none" stroke="#30363d"/>
 
-  <!-- Word Sequence -->
-  <text x="30" y="25" class="terminal-text word1">wait</text>
-  <text x="82" y="25" class="terminal-text word2">for</text>
-  <text x="122" y="25" class="terminal-text word3">updates</text>
+  <!-- Window header -->
+  <circle cx="22" cy="20" r="5" fill="#ff5f57"/>
+  <circle cx="40" cy="20" r="5" fill="#febc2e"/>
+  <circle cx="58" cy="20" r="5" fill="#28c840"/>
+  <text x="260" y="24" text-anchor="middle" class="title">Adam-loy@github:~</text>
+  <line x1="16" y1="36" x2="504" y2="36" stroke="#21262d"/>
 
-  <!-- Dot Sequence -->
-  <text x="210" y="25" class="terminal-text dot1">.</text>
-  <text x="222" y="25" class="terminal-text dot2">.</text>
-  <text x="234" y="25" class="terminal-text dot3">.</text>
+  <!-- Prompt -->
+  <text x="22" y="66" class="terminal-text prompt">~❯</text>
 
-  <!-- Dynamic Cursor -->
-  <rect x="30" y="10" width="10" height="18" class="cursor" />
+  <!-- Frame 1 -->
+  <g class="frame frame1">
+    <text x="50" y="66" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="20">👋</text>
+    <text x="76" y="66" class="terminal-text">Hi there, I'm Adam.</text>
+    <rect x="260" y="49" width="9" height="20" rx="1" class="cursor"/>
+  </g>
+
+  <!-- Frame 2 -->
+  <g class="frame frame2">
+    <text x="50" y="66" class="terminal-text">You're on my GitHub page.</text>
+    <rect x="290" y="49" width="9" height="20" rx="1" class="cursor"/>
+  </g>
+
+  <!-- Frame 3 -->
+  <g class="frame frame3">
+    <text x="50" y="66" class="terminal-text">Sorry, there's not much here yet.</text>
+    <rect x="367" y="49" width="9" height="20" rx="1" class="cursor"/>
+  </g>
+
+  <!-- Frame 4 -->
+  <g class="frame frame4">
+    <text x="50" y="66" class="terminal-text">Updates will be posted soon.</text>
+    <rect x="319" y="49" width="9" height="20" rx="1" class="cursor"/>
+  </g>
 </svg>
