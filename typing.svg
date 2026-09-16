@@ -10,14 +10,14 @@
     .prompt { fill: #3fb950; }
 
     /* Word Reveals */
-    .word1 { animation: typeWord 6s infinite; }
-    .word2 { animation: typeWord 6s infinite; animation-delay: 0.4s; opacity: 0; }
-    .word3 { animation: typeWord 6s infinite; animation-delay: 0.8s; opacity: 0; }
+    .word1 { animation: revealWord1 6s infinite; }
+    .word2 { animation: revealWord2 6s infinite; }
+    .word3 { animation: revealWord3 6s infinite; }
 
     /* Dot-by-dot Reveals */
-    .dot1 { animation: typeWord 6s infinite; animation-delay: 1.2s; opacity: 0; }
-    .dot2 { animation: typeWord 6s infinite; animation-delay: 1.5s; opacity: 0; }
-    .dot3 { animation: typeWord 6s infinite; animation-delay: 1.8s; opacity: 0; }
+    .dot1 { animation: revealDot1 6s infinite; }
+    .dot2 { animation: revealDot2 6s infinite; }
+    .dot3 { animation: revealDot3 6s infinite; }
 
     /* Cursor Animations */
     .cursor {
@@ -25,9 +25,38 @@
       animation: blink 0.8s infinite, moveCursor 6s infinite;
     }
 
-    @keyframes typeWord {
-      0% { opacity: 0; }
-      5%, 85% { opacity: 1; }
+    @keyframes revealWord1 {
+      0%, 8% { opacity: 1; }
+      85%, 100% { opacity: 0; }
+    }
+
+    @keyframes revealWord2 {
+      0%, 13% { opacity: 0; }
+      14%, 85% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+
+    @keyframes revealWord3 {
+      0%, 19% { opacity: 0; }
+      20%, 85% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+
+    @keyframes revealDot1 {
+      0%, 25% { opacity: 0; }
+      26%, 85% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+
+    @keyframes revealDot2 {
+      0%, 31% { opacity: 0; }
+      32%, 85% { opacity: 1; }
+      92%, 100% { opacity: 0; }
+    }
+
+    @keyframes revealDot3 {
+      0%, 37% { opacity: 0; }
+      38%, 85% { opacity: 1; }
       92%, 100% { opacity: 0; }
     }
 
