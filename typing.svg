@@ -7,30 +7,27 @@
       font-weight: bold;
     }
 
-    /* Word reveal animations */
-    .word-1 { animation: showWord 6s infinite; }
-    .word-2 { animation: showWord 6s infinite 0.4s; opacity: 0; }
-    .word-3 { animation: showWord 6s infinite 0.8s; opacity: 0; }
+    .prompt { fill: #3fb950; }
 
-    /* Dot-by-dot character reveals */
-    .dot-1 { animation: showDot 6s infinite 1.3s; opacity: 0; }
-    .dot-2 { animation: showDot 6s infinite 1.6s; opacity: 0; }
-    .dot-3 { animation: showDot 6s infinite 1.9s; opacity: 0; }
+    /* Word Reveals */
+    .word1 { animation: typeWord 6s infinite; }
+    .word2 { animation: typeWord 6s infinite; animation-delay: 0.4s; opacity: 0; }
+    .word3 { animation: typeWord 6s infinite; animation-delay: 0.8s; opacity: 0; }
 
-    /* Blinking Cursor */
+    /* Dot-by-dot Reveals */
+    .dot1 { animation: typeWord 6s infinite; animation-delay: 1.2s; opacity: 0; }
+    .dot2 { animation: typeWord 6s infinite; animation-delay: 1.5s; opacity: 0; }
+    .dot3 { animation: typeWord 6s infinite; animation-delay: 1.8s; opacity: 0; }
+
+    /* Cursor Animations */
     .cursor {
+      fill: #58a6ff;
       animation: blink 0.8s infinite, moveCursor 6s infinite;
     }
 
-    @keyframes showWord {
-      0%, 10% { opacity: 0; }
-      15%, 85% { opacity: 1; }
-      92%, 100% { opacity: 0; }
-    }
-
-    @keyframes showDot {
-      0%, 10% { opacity: 0; }
-      15%, 85% { opacity: 1; }
+    @keyframes typeWord {
+      0% { opacity: 0; }
+      5%, 85% { opacity: 1; }
       92%, 100% { opacity: 0; }
     }
 
@@ -40,34 +37,30 @@
     }
 
     @keyframes moveCursor {
-      0%, 10% { transform: translateX(0px); }
-      12% { transform: translateX(50px); }
-      14% { transform: translateX(85px); }
-      18% { transform: translateX(180px); }
-      21% { transform: translateX(192px); }
-      24% { transform: translateX(204px); }
-      27%, 85% { transform: translateX(216px); }
+      0%, 8% { transform: translateX(0px); }
+      14% { transform: translateX(52px); }
+      20% { transform: translateX(92px); }
+      26% { transform: translateX(180px); }
+      31% { transform: translateX(192px); }
+      36% { transform: translateX(204px); }
+      41%, 85% { transform: translateX(216px); }
       92%, 100% { transform: translateX(0px); }
     }
   </style>
 
-  <g transform="translate(10, 25)">
-    <!-- Terminal Prompt Icon -->
-    <text x="0" y="0" class="terminal-text" fill="#3fb950">&gt;</text>
-    
-    <!-- Words reveal as whole blocks -->
-    <g transform="translate(20, 0)">
-      <tspan class="word-1" x="0">wait </tspan>
-      <tspan class="word-2" x="50">for </tspan>
-      <tspan class="word-3" x="85">updates</tspan>
-      
-      <!-- Dots reveal one character at a time -->
-      <tspan class="dot-1" x="180">.</tspan>
-      <tspan class="dot-2" x="192">.</tspan>
-      <tspan class="dot-3" x="204">.</tspan>
-    </g>
+  <!-- Shell Prompt Icon -->
+  <text x="10" y="25" class="terminal-text prompt">&gt;</text>
 
-    <!-- Typing Cursor -->
-    <rect class="cursor" x="20" y="-16" width="10" height="20" fill="#58a6ff" />
-  </g>
+  <!-- Word Sequence -->
+  <text x="30" y="25" class="terminal-text word1">wait</text>
+  <text x="82" y="25" class="terminal-text word2">for</text>
+  <text x="122" y="25" class="terminal-text word3">updates</text>
+
+  <!-- Dot Sequence -->
+  <text x="210" y="25" class="terminal-text dot1">.</text>
+  <text x="222" y="25" class="terminal-text dot2">.</text>
+  <text x="234" y="25" class="terminal-text dot3">.</text>
+
+  <!-- Dynamic Cursor -->
+  <rect x="30" y="10" width="10" height="18" class="cursor" />
 </svg>
