@@ -3,6 +3,16 @@
 </p>
 
 ---
+### Wait 🙄
+
+- 🌱 I’m documenting what I learn by blogging at [blog](<https://adam-loy.github.io/AdamBesbes/>).
+- 🎓 You can explore my academic background and research on my [portfolio](<https://adam-loy.github.io/BesbesAdam/>)).
+
+<p align="center">
+  <img src="https://github.com/Adam-loy/Adam-loy/raw/main/asset-office.gif" alt="Office GIF" />
+</p>
+
+---
 
 ### 📊 GitHub Statistics
 <div align="center">
@@ -13,8 +23,5 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Adam-loy&theme=radial&hide_border=true" alt="GitHub Streak" width="49%" />
 </div>
 
----
 
-### Wait 🙄
 
-![](https://github.com/Adam-loy/Adam-loy/raw/main/asset-office.gif)
