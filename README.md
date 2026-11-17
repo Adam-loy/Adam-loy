@@ -6,7 +6,7 @@
 ### Wait 🙄
 
 - 🌱 I’m documenting what I learn by blogging at [blog](<https://adam-loy.github.io/AdamBesbes/>).
-- 🎓 You can explore my academic background and research on my [portfolio](<https://adam-loy.github.io/BesbesAdam/>)).
+- 🎓 You can explore my academic background and research on my [portfolio](<https://adam-loy.github.io/BesbesAdam/>).
 
 <p align="center">
   <img src="https://github.com/Adam-loy/Adam-loy/raw/main/asset-office.gif" alt="Office GIF" />
